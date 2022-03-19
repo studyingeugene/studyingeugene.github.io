@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eugenearchive.github.io/sitemap.xml
