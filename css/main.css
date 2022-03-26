@@ -1735,7 +1735,7 @@ pre code {
   width: 4px;
 }
 .post-body {
-  font-family: Jeju Gothic, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Sans KR , sans-serif, Jeju Gothic, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   overflow-wrap: break-word;
 }
 @media (min-width: 1200px) {
@@ -1922,7 +1922,7 @@ pre code {
 }
 .posts-expand .post-meta-container {
   color: #999;
-  font-family: Jeju Gothic, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Sans KR , sans-serif, Jeju Gothic, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 0.75em;
   margin-top: 3px;
 }
@@ -2683,7 +2683,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #71ec06;
+  background: #ffc2ad;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2722,17 +2722,27 @@ hr {
 }
 /* post */
 .post-body-not-index {
-  max-width: 720px;
+  max-width: 700px;
   margin: auto;
 }
 .post-body-not-index p {
-  text-indent: 10px;
+  font-size: 11pt;
+  line-height: 22pt;
+  letter-spacing: 0.8px;
+  margin-bottom: 58px;
+  color: #333;
 }
 .post-body-not-index h2 {
   margin-top: 150px;
 }
 .post-body-not-index h3 {
   margin-top: 150px;
+}
+.post-body-not-index .katex-block {
+  overflow: auto;
+}
+.post-body-not-index .table-container {
+  margin-bottom: 58px;
 }
 /* index */
 @media (max-width: 767px) {
@@ -2755,7 +2765,7 @@ hr {
   font-size: 22px;
 }
 .posts-expand.index .post-body {
-  font-size: 0.875em;
+  font-size: 11pt;
   color: #999;
 }
 @media (max-width: 767px) {
