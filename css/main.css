@@ -2683,7 +2683,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffc2ad;
+  background: #716290;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2743,6 +2743,13 @@ hr {
 }
 .post-body-not-index .table-container {
   margin-bottom: 58px;
+}
+.post-body-not-index code {
+  font-family: Noto sans KR;
+  padding: 0px 7px 2px 7px;
+  font-size: 11pt;
+  background: #f0f0f4;
+  color: #ba0633;
 }
 /* index */
 @media (max-width: 767px) {
