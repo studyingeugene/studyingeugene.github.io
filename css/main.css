@@ -2683,7 +2683,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #a79601;
+  background: #71ec06;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2715,8 +2715,32 @@ hr {
 .archive .collection-title {
   display: none !important;
 }
+@media (max-width: 767px) {
+  .post-meta {
+    font-size: 10px;
+  }
+}
+/* post */
+.post-body-not-index {
+  max-width: 720px;
+  margin: auto;
+}
+.post-body-not-index p {
+  text-indent: 10px;
+}
+.post-body-not-index h2 {
+  margin-top: 150px;
+}
+.post-body-not-index h3 {
+  margin-top: 150px;
+}
 /* index */
-.posts-expand .post-meta {
+@media (max-width: 767px) {
+  .posts-expand .post-title {
+    font-size: 22px;
+  }
+}
+.posts-expand.index .post-meta {
   font-size: 10px;
 }
 .posts-expand.index .post-header {
@@ -2738,18 +2762,4 @@ hr {
   .posts-expand.index .post-body {
     text-align: center;
   }
-}
-/* post */
-.post-body-not-index {
-  max-width: 720px;
-  margin: auto;
-}
-.post-body-not-index p {
-  text-indent: 10px;
-}
-.post-body-not-index h2 {
-  margin-top: 150px;
-}
-.post-body-not-index h3 {
-  margin-top: 150px;
 }
