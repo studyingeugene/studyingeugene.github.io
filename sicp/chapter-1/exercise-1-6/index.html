@@ -218,22 +218,14 @@
 그렇다면 위의 new-if 프로시저를 사용해서 제곱근 프로그램에도 사용해도 되는지 확인해 보십시오.</p>
 <blockquote>
 <h2 id="문제로-부터-얻은-것"><a class="markdownIt-Anchor" href="#문제로-부터-얻은-것"></a> 문제로 부터 얻은 것</h2>
-<p>if식은 실행기에서 실행되는 매커니즘이 다른 프로시저들과 다릅니다.<br />
-new-if 프로시저로 sqrt-iter를 구현하면, 값을 반환하지 못하고 루프에 빠집니다.</p>
+<p>if식은 실행기에서 실행되는 매커니즘이 다른 프로시저들과 다릅니다. new-if 프로시저로 sqrt-iter를 구현하면, 값을 반환하지 못하고 루프에 빠집니다.</p>
 </blockquote>
 <h2 id="문제풀이"><a class="markdownIt-Anchor" href="#문제풀이"></a> 문제풀이</h2>
-<p><a href="/sicp/chapter-1/exercise-1-5/">연습문제 1.5</a>에서 if식이 어떻게 작동하는지를 배웠습니다.<br />
-if식은 술어부<sub>(predicate)</sub>를 먼저 계산하고 그 결과가 참이냐 거짓이냐에 따라 참인 경우와 거짓인 경우 중 한가지만 실행합니다.</p>
-<p>if식 대신에 new-if프로시저를 사용하게 되면, 술어부만 먼저 계산하지 않고, 인자먼저 계산법에 따라 인자들을 전부 계산한 뒤에 프로시저를 계산합니다.<br />
-다시말하면, 아래의 식의 세 개의 인자를 모두 계산한 뒤에 new-if의 몸체에 있는 식들을 실행한다는 뜻입니다.</p>
+<p><a href="/sicp/chapter-1/exercise-1-5/">연습문제 1.5</a>에서 if식이 어떻게 작동하는지를 배웠습니다. if식은 술어부<sup>predicate</sup>를 먼저 계산하고 그 결과가 참이냐 거짓이냐에 따라 참인 경우와 거짓인 경우 중 한가지만 실행합니다.</p>
+<p>if식 대신에 new-if프로시저를 사용하게 되면, 술어부만 먼저 계산하지 않고, 인자먼저 계산법에 따라 인자들을 전부 계산한 뒤에 프로시저를 계산합니다. 다시말하면, 아래의 <code>new-if</code>의 세 개의 인자를 모두 계산한 뒤에 new-if의 몸체에 있는 식들을 실행한다는 뜻입니다.</p>
 <figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name">new-if</span> (<span class="name">good-enough?</span> guess x) guess (<span class="name">sqrt-iter</span> (<span class="name">improve</span> guess x) x))</span><br></pre></td></tr></table></figure>
-<p>이때 Dr.Scheme은 (sqrt-iter (improve guess x) x)를 계속 정의하려고 할 것이고, 끝내 정의내리지 못해서 프로세스는 무한루프에 빠질 것입니다.</p>
-<p><br/><br/></p>
-<p>이는 Dr.scheme 실행기가 if식을 다른 프로시저와는 다르게 계산하기 때문에 나타나는 현상입니다.<br />
-sqrt-iter프로시저는 값을 찾을 때까지 무한 반복하다가 값을 찾으면 무한반복을 끊고 값을 반환하는 프로시저입니다.<br />
-그런데, 값을 찾았다는 것을 알기 위해서는 무한루프를 끊을 수 있는 if문이 실행되어야 합니다.<br />
-새로 만든 sqrt-iter는 if문 대신 new-if프로시저가 있기 때문에 무한루프을 끊고 값을 반환할 수 없습니다.<br />
-결론은 new-if 프로시저로 sqrt-iter를 구현하면, 값을 반환하지 못하고 무한루프에 빠진다는 것입니다.</p>
+<p>이때 Dr.Racket은 (sqrt-iter (improve guess x) x)를 계속 정의하려고 할 것이고, 끝내 정의내리지 못해서 프로세스는 무한루프에 빠질 것입니다.</p>
+<p>이는 Dr.scheme 실행기가 if식을 다른 프로시저와는 다르게 계산하기 때문에 나타나는 현상입니다. sqrt-iter프로시저는 값을 찾을 때까지 무한 반복하다가 값을 찾으면 무한반복을 끊고 값을 반환하는 프로시저입니다. 그런데, 값을 찾았다는 것을 알기 위해서는 무한루프를 끊을 수 있는 if문이 실행되어야 합니다. 새로 만든 sqrt-iter는 if문 대신 new-if프로시저가 있기 때문에 무한루프을 끊고 값을 반환할 수 없습니다. 결론은 new-if 프로시저로 sqrt-iter를 구현하면, 값을 반환하지 못하고 무한루프에 빠진다는 것입니다.</p>
 <p><img data-src="/img/sicp/chapter-1/exercise-1-6.png" alt="if문이 없어서 멈출 수 없는 Dr.racket" /></p>
 <p>Dr.racket에서도 종료되지 못하고 무한반복하는 모습입니다.</p>
 
