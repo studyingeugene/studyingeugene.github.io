@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://studyingeugene.github.io/sicp/chapter-3/exercise-3-1/</loc>
+    
+    <lastmod>2022-04-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://studyingeugene.github.io/sicp/review/chapter-1-review/</loc>
     
     <lastmod>2022-03-26</lastmod>
@@ -1138,7 +1147,7 @@
 
   <url>
     <loc>https://studyingeugene.github.io/</loc>
-    <lastmod>2022-04-06</lastmod>
+    <lastmod>2022-04-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

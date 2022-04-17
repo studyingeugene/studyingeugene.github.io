@@ -1,3 +1,4 @@
+https://studyingeugene.github.io/sicp/chapter-3/exercise-3-1/
 https://studyingeugene.github.io/sicp/review/chapter-1-review/
 https://studyingeugene.github.io/sicp/chapter-2/exercise-2-73/
 https://studyingeugene.github.io/about/index.html
