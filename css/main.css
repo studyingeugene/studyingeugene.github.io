@@ -2683,7 +2683,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #750b63;
+  background: #b48;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2725,6 +2725,12 @@ hr {
   max-width: 700px;
   margin: auto;
 }
+.post-body-not-index ol {
+  margin-bottom: 58px;
+}
+.post-body-not-index ul {
+  margin-bottom: 58px;
+}
 .post-body-not-index p {
   font-size: 11pt;
   line-height: 22pt;
@@ -2739,6 +2745,9 @@ hr {
   .post-body-not-index img {
     width: 100%;
   }
+}
+.post-body-not-index .image-caption {
+  margin: auto;
 }
 .post-body-not-index h2 {
   margin-top: 150px;
