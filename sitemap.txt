@@ -1,5 +1,5 @@
-https://studyingeugene.github.io/categories/index.html
 https://studyingeugene.github.io/about/index.html
+https://studyingeugene.github.io/categories/index.html
 https://studyingeugene.github.io/etc/cs-study-in-army/
 https://studyingeugene.github.io/sicp/chapter-3/exercise-3-1/
 https://studyingeugene.github.io/sicp/review/chapter-1-review/
