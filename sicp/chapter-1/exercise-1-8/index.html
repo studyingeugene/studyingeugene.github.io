@@ -19,13 +19,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"studyingeugene.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"right","display":"remove","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeInUp","post_header":false,"post_body":false,"coll_header":false,"sidebar":false}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"studyingeugene.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeInUp","post_header":false,"post_body":false,"coll_header":false,"sidebar":false}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="세제곱 뉴턴법 프로시저로 구현하기">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SICP 연습문제 1.8 친절한 풀이">
 <meta property="og:url" content="https://studyingeugene.github.io/sicp/chapter-1/exercise-1-8/index.html">
-<meta property="og:site_name" content="이태화 연구기록 아카이브">
+<meta property="og:site_name" content="이태화 아카이브">
 <meta property="og:description" content="세제곱 뉴턴법 프로시저로 구현하기">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://studyingeugene.github.io/img/sicp/chapter-1/exercise-1-8.png">
@@ -45,7 +45,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://studyingeugene.github.io/sicp/chapter-1/exercise-1-8/","path":"sicp/chapter-1/exercise-1-8/","title":"SICP 연습문제 1.8 친절한 풀이"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>SICP 연습문제 1.8 친절한 풀이 | 이태화 연구기록 아카이브</title>
+<title>SICP 연습문제 1.8 친절한 풀이 | 이태화 아카이브</title>
   
 
 
@@ -81,7 +81,7 @@
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <p class="site-title">이태화 연구기록 아카이브</p>
+      <p class="site-title">이태화 아카이브</p>
     </a>
       <p class="site-subtitle" itemprop="description">Plus Ultra</p>
   </div>
@@ -134,6 +134,50 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          소개
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C"><span class="nav-text"> 문제</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C%EB%A1%9C-%EB%B6%80%ED%84%B0-%EC%96%BB%EC%9D%80-%EA%B2%83"><span class="nav-text"> 문제로 부터 얻은 것</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4"><span class="nav-text"> 문제풀이</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="이태화"
+      src="https://avatars.githubusercontent.com/u/102410772?v=1">
+  <p class="site-author-name" itemprop="name">이태화</p>
+  <div class="site-description" itemprop="description">공부한 지식을 정리 및 보관하기 위한 개인 아카이브입니다. 오타나 틀린 내용이 있다면 댓글로 지적해 주시면 감사하겠습니다.</div>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
@@ -166,12 +210,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="이태화 연구기록 아카이브">
-      <meta itemprop="description" content="공부한 지식을 정리 및 보관하기 위한 개인 아카이브입니다. 오타나 틀린 내용이 있다면 댓글로 지적해 주시면 감사하겠습니다. 바랍니다.">
+      <meta itemprop="name" content="이태화 아카이브">
+      <meta itemprop="description" content="공부한 지식을 정리 및 보관하기 위한 개인 아카이브입니다. 오타나 틀린 내용이 있다면 댓글로 지적해 주시면 감사하겠습니다.">
     </span>
     
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="SICP 연습문제 1.8 친절한 풀이 | 이태화 연구기록 아카이브">
+      <meta itemprop="name" content="SICP 연습문제 1.8 친절한 풀이 | 이태화 아카이브">
       <meta itemprop="description" content="세제곱 뉴턴법 프로시저로 구현하기">
     </span>
       <header class="post-header">
@@ -270,13 +314,13 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">이태화</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
     </div>
@@ -287,7 +331,7 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
