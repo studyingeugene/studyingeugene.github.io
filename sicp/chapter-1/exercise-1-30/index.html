@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/box-archive-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/box-archive-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/box-archive-16x16.png">
+  <link rel="mask-icon" href="/img/favicon/box-archive-solid.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"studyingeugene.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeInUp","post_header":false,"post_body":false,"coll_header":false,"sidebar":false}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="sum 프로시저를 반복하는 프로세스로 만들기">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SICP 연습문제 1.30 친절한 풀이">
+<meta property="og:url" content="https://studyingeugene.github.io/sicp/chapter-1/exercise-1-30/index.html">
+<meta property="og:site_name" content="이태화 아카이브">
+<meta property="og:description" content="sum 프로시저를 반복하는 프로세스로 만들기">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://studyingeugene.github.io/img/sicp/chapter-1/exercise-1-30.png">
+<meta property="article:published_time" content="2022-02-08T01:30:00.000Z">
+<meta property="article:modified_time" content="2022-02-08T01:30:00.000Z">
+<meta property="article:author" content="이태화">
+<meta property="article:tag" content="SICP">
+<meta property="article:tag" content="컴퓨터 프로그램의 구조와 해석">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://studyingeugene.github.io/img/sicp/chapter-1/exercise-1-30.png">
+
+
+<link rel="canonical" href="https://studyingeugene.github.io/sicp/chapter-1/exercise-1-30/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://studyingeugene.github.io/sicp/chapter-1/exercise-1-30/","path":"sicp/chapter-1/exercise-1-30/","title":"SICP 연습문제 1.30 친절한 풀이"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>SICP 연습문제 1.30 친절한 풀이 | 이태화 아카이브</title>
+  
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejugothic.css">
+<meta name="google-site-verification" content="GG6y04HlVXwD3NSSnQ_aDh3Y-i2vH1iYX9GMTb6ybw8" />
+<meta name="google-site-verification" content="L2Ro4ExoGrwHQ6er6FuyGHWxUdHoDQ87D1H3QpQrjz4" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5752314429808077"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <p class="site-title">이태화 아카이브</p>
+    </a>
+      <p class="site-subtitle" itemprop="description">Plus Ultra</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>프로필</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-bars fa-fw"></i>카테고리</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>전체글 보기</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          소개
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C"><span class="nav-text"> 문제</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C%EB%A1%9C-%EB%B6%80%ED%84%B0-%EC%96%BB%EC%9D%80-%EA%B2%83"><span class="nav-text"> 문제로 부터 얻은 것</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4"><span class="nav-text"> 문제풀이</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="이태화"
+      src="https://avatars.githubusercontent.com/u/102410772?v=1">
+  <p class="site-author-name" itemprop="name">이태화</p>
+  <div class="site-description" itemprop="description">공부한 지식을 정리 및 보관하기 위한 개인 아카이브입니다. 오타나 틀린 내용이 있다면 댓글로 지적해 주시면 감사하겠습니다.</div>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://studyingeugene.github.io/sicp/chapter-1/exercise-1-30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/102410772?v=1">
+      <meta itemprop="name" content="이태화">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="이태화 아카이브">
+      <meta itemprop="description" content="공부한 지식을 정리 및 보관하기 위한 개인 아카이브입니다. 오타나 틀린 내용이 있다면 댓글로 지적해 주시면 감사하겠습니다.">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="SICP 연습문제 1.30 친절한 풀이 | 이태화 아카이브">
+      <meta itemprop="description" content="sum 프로시저를 반복하는 프로세스로 만들기">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SICP 연습문제 1.30 친절한 풀이
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+
+      <time title="Post created: 2022-02-08 10:30:00" itemprop="dateCreated datePublished" datetime="2022-02-08T10:30:00+09:00">2022-02-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/sicp/" itemprop="url" rel="index"><span itemprop="name">컴퓨터 프로그램의 구조와 해석</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/sicp/chapter-1/" itemprop="url" rel="index"><span itemprop="name">1장 연습문제 풀이</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">sum 프로시저를 반복하는 프로세스로 만들기</div>
+        </div>
+      </header>
+
+    
+    
+    
+	<div class="post-body post-body-not-index" itemprop="articleBody">
+        <h2 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h2>
+<p>위에서 짠 sum 프로시저는 선형 재귀 프로세스를 만들어 낸다. 이를 다음처럼 선형으로 반복하게끔 고칠 수 있다. 빈 곳을 채워 보라.</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">sum</span> term a next b)</span><br><span class="line">  (<span class="name"><span class="built_in">define</span></span> (<span class="name">iter</span> a result)</span><br><span class="line">    (<span class="name"><span class="built_in">if</span></span> &lt;??&gt;</span><br><span class="line">        &lt;??&gt;</span><br><span class="line">        (<span class="name">iter</span> &lt;??&gt; &lt;??&gt;)))</span><br><span class="line">  (<span class="name">iter</span> &lt;??&gt; &lt;??&gt;))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h2 id="문제로-부터-얻은-것"><a class="markdownIt-Anchor" href="#문제로-부터-얻은-것"></a> 문제로 부터 얻은 것</h2>
+<p>되도는 프로세스를 반복하는 프로세스로 고치려면<br />
+결과값을 저장할 인자 하나를 상정하는 것이 좋습니다.</p>
+</blockquote>
+<h2 id="문제풀이"><a class="markdownIt-Anchor" href="#문제풀이"></a> 문제풀이</h2>
+<p>앞의 연습문제들에서 반복하는 프로세스를 많이 만들어 봤으므로, 어떻게 해야 하는 지는 본능적으로 떠올랐습니다.</p>
+<p>바로 result에 모든 결과를 축적하면서 반복을 진행하는 것입니다.</p>
+<p>if식의 술어인 반복 탈출 조건은 당연히 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>&gt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a&gt;b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>입니다.<br />
+next 프로시저에 따라 정확하게 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a=b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>가 나오지 않을 수 있기 때문입니다.<br />
+그리고 탈출 조건을 만족할 때에 지금까지 값을 축적한 result를 반환해야 하므로 if식의 참일때 결과는 result입니다.</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">sum</span> term a next b)</span><br><span class="line">  (<span class="name"><span class="built_in">define</span></span> (<span class="name">iter</span> a result)</span><br><span class="line">    (<span class="name"><span class="built_in">if</span></span> (<span class="name"><span class="built_in">&gt;</span></span> a b)</span><br><span class="line">        result</span><br><span class="line">        (<span class="name">iter</span> &lt;??&gt; &lt;??&gt;)))</span><br><span class="line">  (<span class="name">iter</span> &lt;??&gt; &lt;??&gt;))</span><br></pre></td></tr></table></figure>
+<p><br /><br /><br /><br /></p>
+<p>아직 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>&gt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a&gt;b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>가 아니라면,<br />
+(term a)값을 result에 축적하고<br />
+(next a)를 iter 프로시저에 넘겨줘야 합니다.</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">sum</span> term a next b)</span><br><span class="line">  (<span class="name"><span class="built_in">define</span></span> (<span class="name">iter</span> a result)</span><br><span class="line">    (<span class="name"><span class="built_in">if</span></span> (<span class="name"><span class="built_in">&gt;</span></span> a b)</span><br><span class="line">        result</span><br><span class="line">        (<span class="name">iter</span> (<span class="name">next</span> a) (<span class="name"><span class="built_in">+</span></span> result (<span class="name">term</span> a)))))</span><br><span class="line">  (<span class="name">iter</span> &lt;??&gt; &lt;??&gt;))</span><br></pre></td></tr></table></figure>
+<p><br /><br /><br /><br /></p>
+<p>sum 프로시저의 시작 iter에는 당연히 a의 초기값과 result를 축적할 0이 들어가야 합니다.</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">sum</span> term a next b)</span><br><span class="line">  (<span class="name"><span class="built_in">define</span></span> (<span class="name">iter</span> a result)</span><br><span class="line">    (<span class="name"><span class="built_in">if</span></span> (<span class="name"><span class="built_in">&gt;</span></span> a b)</span><br><span class="line">        result</span><br><span class="line">        (<span class="name">iter</span> (<span class="name">next</span> a) (<span class="name"><span class="built_in">+</span></span> result (<span class="name">term</span> a)))))</span><br><span class="line">  (<span class="name">iter</span> a <span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+<p><br /><br /><br /><br /></p>
+<p>시험삼아 아래의 코드를 실행시켜 보겠습니다.</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">square</span> x)</span><br><span class="line">  (<span class="name"><span class="built_in">*</span></span> x x))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">inc</span> x)</span><br><span class="line">  (<span class="name"><span class="built_in">+</span></span> x <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">sum</span> term a next b)</span><br><span class="line">  (<span class="name"><span class="built_in">define</span></span> (<span class="name">iter</span> a result)</span><br><span class="line">    (<span class="name"><span class="built_in">if</span></span> (<span class="name"><span class="built_in">&gt;</span></span> a b)</span><br><span class="line">        result</span><br><span class="line">        (<span class="name">iter</span> (<span class="name">next</span> a) (<span class="name"><span class="built_in">+</span></span> result (<span class="name">term</span> a)))))</span><br><span class="line">  (<span class="name">iter</span> a <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">(<span class="name">sum</span> square <span class="number">1</span> inc <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>1</mn><mn>2</mn></msup><mo>+</mo><msup><mn>2</mn><mn>2</mn></msup><mo>+</mo><msup><mn>3</mn><mn>2</mn></msup><mo>+</mo><msup><mn>4</mn><mn>2</mn></msup><mo>+</mo><msup><mn>5</mn><mn>2</mn></msup><mo>=</mo><mn>55</mn></mrow><annotation encoding="application/x-tex">1^2+2^2+3^2+4^2+5^2=55</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">4</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">5</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">5</span></span></span></span></p>
+<p><img data-src="/img/sicp/chapter-1/exercise-1-30.png" alt="정상적으로 작동하는 sum 프로시저" /></p>
+<p><br /><br /><br /><br /></p>
+<p>읽어주셔서 감사합니다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/sicp/" rel="tag"># SICP</a>
+              <a href="/tags/sicp/" rel="tag"># 컴퓨터 프로그램의 구조와 해석</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/sicp/chapter-1/exercise-1-29/" rel="prev" title="SICP 연습문제 1.29 친절한 풀이">
+                  <i class="fa fa-chevron-left"></i> SICP 연습문제 1.29 친절한 풀이
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/sicp/chapter-1/exercise-1-31/" rel="next" title="SICP 연습문제 1.31 친절한 풀이">
+                  SICP 연습문제 1.31 친절한 풀이 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">이태화</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha256-94CNZ/bJtwrBYZrXhCOBvpB4rZUzBnvAsirFv31TMGo=" crossorigin="anonymous">
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"studyingeugene/studyingeugene.github.io","issue_term":"title","theme":"github-light"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>
