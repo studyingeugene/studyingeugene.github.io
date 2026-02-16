@@ -1,2 +1,2 @@
 # Link
-[dyingeugene.github.io](https://studyingeugene.github.io/)
+[studyingeugene.github.io](https://studyingeugene.github.io/)
