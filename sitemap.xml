@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://studyingeugene.github.io/advanced-linear-algebra/lecture-06-svd/</loc>
+    
+    <lastmod>2026-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://studyingeugene.github.io/advanced-linear-algebra/lecture-05-positive-definite/</loc>
+    
+    <lastmod>2026-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://studyingeugene.github.io/advanced-linear-algebra/lecture-04-eigenvalues/</loc>
+    
+    <lastmod>2026-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://studyingeugene.github.io/advanced-linear-algebra/lecture-03-orthogonality/</loc>
+    
+    <lastmod>2026-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://studyingeugene.github.io/advanced-linear-algebra/lecture-02-matrix-multiplication/</loc>
+    
+    <lastmod>2026-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://studyingeugene.github.io/advanced-linear-algebra/lecture-01-column-space/</loc>
     
     <lastmod>2026-09-28</lastmod>

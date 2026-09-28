@@ -1,3 +1,8 @@
+https://studyingeugene.github.io/advanced-linear-algebra/lecture-06-svd/
+https://studyingeugene.github.io/advanced-linear-algebra/lecture-05-positive-definite/
+https://studyingeugene.github.io/advanced-linear-algebra/lecture-04-eigenvalues/
+https://studyingeugene.github.io/advanced-linear-algebra/lecture-03-orthogonality/
+https://studyingeugene.github.io/advanced-linear-algebra/lecture-02-matrix-multiplication/
 https://studyingeugene.github.io/advanced-linear-algebra/lecture-01-column-space/
 https://studyingeugene.github.io/advanced-linear-algebra/series/
 https://studyingeugene.github.io/about/index.html
