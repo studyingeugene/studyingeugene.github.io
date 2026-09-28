@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/box-archive-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/box-archive-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/box-archive-16x16.png">
+  <link rel="mask-icon" href="/img/favicon/box-archive-solid.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"studyingeugene.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeInUp","post_header":false,"post_body":false,"coll_header":false,"sidebar":false}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Linear Algebra and Learning from Data의 7개 Part, 47개 절을 MIT 18.065의 Lecture 1–36과 연결한 학습 목차입니다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="고급 선형 대수: Strang 교재와 MIT 18.065 전체 목차">
+<meta property="og:url" content="https://studyingeugene.github.io/advanced-linear-algebra/series/index.html">
+<meta property="og:site_name" content="이태화 아카이브">
+<meta property="og:description" content="Linear Algebra and Learning from Data의 7개 Part, 47개 절을 MIT 18.065의 Lecture 1–36과 연결한 학습 목차입니다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-09-28T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-28T15:00:00.000Z">
+<meta property="article:author" content="이태화">
+<meta property="article:tag" content="선형대수">
+<meta property="article:tag" content="Gilbert Strang">
+<meta property="article:tag" content="MIT 18.065">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://studyingeugene.github.io/advanced-linear-algebra/series/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://studyingeugene.github.io/advanced-linear-algebra/series/","path":"/advanced-linear-algebra/series/","title":"고급 선형 대수: Strang 교재와 MIT 18.065 전체 목차"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>고급 선형 대수: Strang 교재와 MIT 18.065 전체 목차 | 이태화 아카이브</title>
+  
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejugothic.css">
+<meta name="google-site-verification" content="GG6y04HlVXwD3NSSnQ_aDh3Y-i2vH1iYX9GMTb6ybw8" />
+<meta name="google-site-verification" content="L2Ro4ExoGrwHQ6er6FuyGHWxUdHoDQ87D1H3QpQrjz4" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5752314429808077"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <p class="site-title">이태화 아카이브</p>
+    </a>
+      <p class="site-subtitle" itemprop="description">Plus Ultra</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>프로필</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-bars fa-fw"></i>카테고리</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>전체글 보기</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          소개
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%B1%85%EA%B3%BC-%EA%B0%95%EC%9D%98"><span class="nav-text"> 사용하는 책과 강의</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lecture-136-%EB%AA%A9%EC%B0%A8"><span class="nav-text"> Lecture 1–36 목차</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B5%90%EC%9E%AC-47%EA%B0%9C-%EC%A0%88%EC%9D%98-%EC%A0%84%EC%B2%B4-%EB%AA%A9%EC%B0%A8"><span class="nav-text"> 교재 47개 절의 전체 목차</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#part-i-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%EC%9D%98-%ED%95%B5%EC%8B%AC"><span class="nav-text"> Part I — 선형대수의 핵심</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#part-ii-%ED%81%B0-%ED%96%89%EB%A0%AC%EC%9D%98-%EA%B3%84%EC%82%B0"><span class="nav-text"> Part II — 큰 행렬의 계산</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#part-iii-%EC%A0%80%EB%9E%AD%ED%81%AC%EC%99%80-%EC%95%95%EC%B6%95-%EC%84%BC%EC%8B%B1"><span class="nav-text"> Part III — 저랭크와 압축 센싱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#part-iv-%ED%8A%B9%EB%B3%84%ED%95%9C-%EA%B5%AC%EC%A1%B0%EC%9D%98-%ED%96%89%EB%A0%AC"><span class="nav-text"> Part IV — 특별한 구조의 행렬</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#part-v-%ED%99%95%EB%A5%A0%EA%B3%BC-%ED%86%B5%EA%B3%84"><span class="nav-text"> Part V — 확률과 통계</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#part-vi-%EC%B5%9C%EC%A0%81%ED%99%94"><span class="nav-text"> Part VI — 최적화</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#part-vii-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%97%90%EC%84%9C-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0"><span class="nav-text"> Part VII — 데이터에서 학습하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%84%9C%EB%AC%B8%EA%B3%BC-%EB%B3%B8%ED%8E%B8-%EB%92%A4%EC%9D%98-%EC%9E%90%EB%A3%8C"><span class="nav-text"> 서문과 본편 뒤의 자료</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B0%81-%EA%B8%80%EC%9D%98-%EA%B5%AC%EC%84%B1"><span class="nav-text"> 각 글의 구성</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B0%B8%EA%B3%A0-%EC%9E%90%EB%A3%8C"><span class="nav-text"> 참고 자료</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="이태화"
+      src="https://avatars.githubusercontent.com/u/102410772?v=1">
+  <p class="site-author-name" itemprop="name">이태화</p>
+  <div class="site-description" itemprop="description">공부한 지식을 정리 및 보관하기 위한 개인 아카이브입니다. 오타나 틀린 내용이 있다면 댓글로 지적해 주시면 감사하겠습니다.</div>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://studyingeugene.github.io/advanced-linear-algebra/series/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/102410772?v=1">
+      <meta itemprop="name" content="이태화">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="이태화 아카이브">
+      <meta itemprop="description" content="공부한 지식을 정리 및 보관하기 위한 개인 아카이브입니다. 오타나 틀린 내용이 있다면 댓글로 지적해 주시면 감사하겠습니다.">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="고급 선형 대수: Strang 교재와 MIT 18.065 전체 목차 | 이태화 아카이브">
+      <meta itemprop="description" content="Linear Algebra and Learning from Data의 7개 Part, 47개 절을 MIT 18.065의 Lecture 1–36과 연결한 학습 목차입니다.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          고급 선형 대수: Strang 교재와 MIT 18.065 전체 목차
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+
+      <time title="Post created: 2026-09-29 00:00:00" itemprop="dateCreated datePublished" datetime="2026-09-29T00:00:00+09:00">2026-09-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/advanced-linear-algebra/" itemprop="url" rel="index"><span itemprop="name">고급 선형 대수</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Linear Algebra and Learning from Data의 7개 Part, 47개 절을 MIT 18.065의 Lecture 1–36과 연결한 학습 목차입니다.</div>
+        </div>
+      </header>
+
+    
+    
+    
+	<div class="post-body post-body-not-index" itemprop="articleBody">
+        <p>Gilbert Strang의 교재와 MIT 강의를 함께 읽으며 선형대수에서 데이터 분석과 학습으로 이어지는 내용을 정리합니다. 강의 순서대로 읽을 수 있는 글과, 교재의 빠진 부분을 채우는 보완 글을 연결해 나갈 예정입니다.</p>
+<p><strong>현재 작성된 글은 <a href="/advanced-linear-algebra/lecture-01-column-space/">Lecture 1: 열공간과 랭크, A = CR 분해</a>입니다.</strong> 아래에서 “예정”으로 표시한 항목은 앞으로 작성할 목차입니다. 강의 링크는 MIT 원자료로 연결됩니다.</p>
+<h2 id="사용하는-책과-강의"><a class="markdownIt-Anchor" href="#사용하는-책과-강의"></a> 사용하는 책과 강의</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>교재</td>
+<td>Gilbert Strang, <strong><a target="_blank" rel="noopener" href="https://math.mit.edu/~gs/learningfromdata/">Linear Algebra and Learning from Data</a></strong>, Wellesley-Cambridge Press, <strong>2019</strong>, ISBN 978-0-692-19638-0</td>
+</tr>
+<tr>
+<td>교재 범위</td>
+<td><strong>Part I–VII, 47개 절</strong>. 아래 교재 목차에 절 번호와 시작 쪽수를 표시합니다.</td>
+</tr>
+<tr>
+<td>강의</td>
+<td><strong><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/video_galleries/video-lectures/">MIT 18.065, Spring 2018 — Matrix Methods in Data Analysis, Signal Processing, and Machine Learning</a></strong></td>
+</tr>
+<tr>
+<td>대응표</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/pages/readings/">MIT 공식 강의별 읽기 목록</a>과 개별 강의 페이지</td>
+</tr>
+<tr>
+<td>연습문제</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/18065-all-problem-sets-in-one-file/">18.065 All problem sets in one file</a></td>
+</tr>
+</tbody>
+</table>
+<p>교재의 쪽수는 <strong>인쇄쪽수</strong>를 사용합니다. 스캔본은 한 PDF 페이지에 책의 두 쪽이 들어 있어 PDF 뷰어의 페이지 번호와 다릅니다. 읽기 목록에는 2018년으로 소개되어 있지만, 이 시리즈는 제공된 책의 판권면과 저자 공식 사이트에서 확인한 <strong>2019년판</strong>을 기준으로 삼습니다.</p>
+<p>강의는 36회로 구성되며 <strong>28·29강은 녹화 영상이 없는 수업 중 실습</strong>입니다. 두 회차는 공식 일정과 공개된 실습·교재 자료를 기준으로 다룹니다. <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/video_galleries/video-lectures/">MIT 영상 목록</a>과 <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/pages/calendar/">공식 일정</a>에서 이 구분을 확인할 수 있습니다.</p>
+<h2 id="lecture-136-목차"><a class="markdownIt-Anchor" href="#lecture-136-목차"></a> Lecture 1–36 목차</h2>
+<p>아래 절 번호는 기본적으로 MIT의 공식 읽기 배정입니다. 강의 순서와 책의 순서가 항상 같지는 않습니다. “보완 읽기”는 이 시리즈에서 제안하는 연결이며, 공식 배정과 구별합니다.</p>
+<table>
+<thead>
+<tr>
+<th>회차</th>
+<th>강의 주제와 원강의 링크</th>
+<th>교재의 Part·절</th>
+<th>정리 글</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-1-the-column-space-of-a-contains-all-vectors-ax/">열공간과 Ax</a></td>
+<td>I.1; 강의 후반 연결 I.2</td>
+<td><a href="/advanced-linear-algebra/lecture-01-column-space/">작성 완료</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-2-multiplying-and-factoring-matrices/">행렬곱과 행렬 분해</a></td>
+<td>I.2</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-3-orthonormal-columns-in-q-give-q2019q-i/">정규직교 열과 Q의 성질</a></td>
+<td>I.5</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-4-eigenvalues-and-eigenvectors/">고유값과 고유벡터</a></td>
+<td>I.6</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-5-positive-definite-and-semidefinite-matrices/">양의 정부호와 준정부호</a></td>
+<td>I.7</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-6-singular-value-decomposition-svd/">특잇값 분해</a></td>
+<td>I.8</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-7-eckart-young-the-closest-rank-k-matrix-to-a/">최적 저랭크 근사</a></td>
+<td>I.9</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-8-norms-of-vectors-and-matrices/">벡터와 행렬의 노름</a></td>
+<td>I.11</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-9-four-ways-to-solve-least-squares-problems/">최소제곱 문제의 네 접근</a></td>
+<td>II.2</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-10-survey-of-difficulties-with-ax-b/">선형시스템 계산의 어려움</a></td>
+<td>Part II 도입, pp. 113–114</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-11-minimizing-2016x2016-subject-to-ax-b/">선형 제약 아래 최소 노름</a></td>
+<td>I.11</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-12-computing-eigenvalues-and-singular-values/">고유값·특잇값의 수치 계산</a></td>
+<td>II.1</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-13-randomized-matrix-multiplication/">무작위화 행렬곱</a></td>
+<td>II.4</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-14-low-rank-changes-in-a-and-its-inverse/">저랭크 수정과 역행렬</a></td>
+<td>III.1</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-15-matrices-a-t-depending-on-t-derivative-da-dt/">시간에 따라 변하는 행렬</a></td>
+<td>III.1–III.2</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-16-derivatives-of-inverse-and-singular-values/">역행렬과 특잇값의 미분</a></td>
+<td>III.1–III.2</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-17-rapidly-decreasing-singular-values/">빠르게 감소하는 특잇값</a></td>
+<td>III.3</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-18-counting-parameters-in-svd-lu-qr-saddle-points/">분해의 매개변수 수와 안장점</a></td>
+<td>III.2; 보완 읽기 p. 419</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-19-saddle-points-continued-maxmin-principle/">안장점과 최대·최소 원리</a></td>
+<td>III.2, V.1</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-20-definitions-and-inequalities/">확률의 정의와 부등식</a></td>
+<td>V.1, V.3 — 개별 강의 페이지 기준</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-21-minimizing-a-function-step-by-step/">함수 최소화의 단계별 접근</a></td>
+<td>VI.1, VI.4</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-22-gradient-descent-downhill-to-a-minimum/">경사하강법</a></td>
+<td>VI.4</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-23-accelerating-gradient-descent-use-momentum/">모멘텀과 가속</a></td>
+<td>VI.4</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-24-linear-programming-and-two-person-games/">선형계획과 2인 게임</a></td>
+<td>VI.2–VI.3</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-25-stochastic-gradient-descent/">확률적 경사하강법</a></td>
+<td>VI.5</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-26-structure-of-neural-nets-for-deep-learning/">심층 신경망의 구조</a></td>
+<td>VII.1</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>27</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-27-backpropagation-find-partial-derivatives/">역전파와 편미분</a></td>
+<td>VII.3</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>28</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/pages/calendar/">수업 중 실습 — 영상 없음</a></td>
+<td>VII.2</td>
+<td>공개 자료 기반 정리 예정</td>
+</tr>
+<tr>
+<td>29</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/pages/calendar/">수업 중 실습 계속 — 영상 없음</a></td>
+<td>공식 지정 절 없음; 보완 읽기 VII.2</td>
+<td>공개 자료 기반 정리 예정</td>
+</tr>
+<tr>
+<td>30</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-30-completing-a-rank-one-matrix-circulants/">랭크 1 행렬 완성과 순환행렬</a></td>
+<td>IV.8, IV.2</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>31</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-31-eigenvectors-of-circulant-matrices-fourier-matrix/">순환행렬의 고유벡터와 푸리에 행렬</a></td>
+<td>IV.2</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>32</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-32-imagenet-is-a-cnn-the-convolution-rule/">ImageNet과 합성곱 연산</a></td>
+<td>IV.2; 보완 읽기 VII.2</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>33</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-33-neural-nets-and-the-learning-function/">신경망이 표현하는 학습 함수</a></td>
+<td>VII.1, IV.10</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>34</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-34-distance-matrices-procrustes-problem-first-project/">거리행렬과 Procrustes 문제</a></td>
+<td>IV.9–IV.10</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>35</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-35-finding-clusters-in-graphs-second-project-handwriting/">그래프의 군집 찾기</a></td>
+<td>IV.6–IV.7</td>
+<td>예정</td>
+</tr>
+<tr>
+<td>36</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-36-third-project-alan-edelman-and-julia-language/">Alan Edelman과 Julia</a></td>
+<td>III.3, VII.2</td>
+<td>예정</td>
+</tr>
+</tbody>
+</table>
+<p>Lecture 20의 절 번호는 통합 읽기 표에서 비어 있지만, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-20-definitions-and-inequalities/">개별 강의 페이지</a>에 V.1과 V.3이 명시되어 있습니다. Lecture 29에는 공식 지정 절이 없으므로 VII.2를 보완 읽기로 연결했습니다. 녹화되지 않은 실습 내용을 추정해 강의 내용이라고 서술하지 않습니다.</p>
+<h2 id="교재-47개-절의-전체-목차"><a class="markdownIt-Anchor" href="#교재-47개-절의-전체-목차"></a> 교재 47개 절의 전체 목차</h2>
+<p><strong>쪽수는 각 절의 시작 쪽수</strong>입니다. “보완편”은 공식 읽기 배정에서 독립적으로 다뤄지지 않은 절을 따로 정리할 계획이라는 뜻입니다. 해당 행의 강의 링크는 관련 개념으로 이어지는 학습 경로이며, 그 강의가 해당 절 전체를 다룬다는 의미는 아닙니다.</p>
+<h3 id="part-i-선형대수의-핵심"><a class="markdownIt-Anchor" href="#part-i-선형대수의-핵심"></a> Part I — 선형대수의 핵심</h3>
+<p>교재의 Part 제목은 <em>Highlights of Linear Algebra</em>입니다. Part 도입은 p. 1입니다.</p>
+<table>
+<thead>
+<tr>
+<th>절</th>
+<th>내용</th>
+<th>시작 쪽수</th>
+<th>연결 강의·글</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I.1</td>
+<td>열의 선형결합으로 읽는 행렬·벡터 곱</td>
+<td>2</td>
+<td><a href="/advanced-linear-algebra/lecture-01-column-space/">Lecture 1 글</a> · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-1-the-column-space-of-a-contains-all-vectors-ax/">원강의</a></td>
+</tr>
+<tr>
+<td>I.2</td>
+<td>행렬과 행렬의 곱</td>
+<td>9</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-2-multiplying-and-factoring-matrices/">Lecture 2</a></td>
+</tr>
+<tr>
+<td>I.3</td>
+<td>네 가지 기본 부분공간</td>
+<td>14</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-1-the-column-space-of-a-contains-all-vectors-ax/">1</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-3-orthonormal-columns-in-q-give-q2019q-i/">3</a></td>
+</tr>
+<tr>
+<td>I.4</td>
+<td>소거법과 LU 분해</td>
+<td>21</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-2-multiplying-and-factoring-matrices/">2</a></td>
+</tr>
+<tr>
+<td>I.5</td>
+<td>직교행렬과 직교 부분공간</td>
+<td>29</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-3-orthonormal-columns-in-q-give-q2019q-i/">3</a></td>
+</tr>
+<tr>
+<td>I.6</td>
+<td>고유값과 고유벡터</td>
+<td>36</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-4-eigenvalues-and-eigenvectors/">4</a></td>
+</tr>
+<tr>
+<td>I.7</td>
+<td>대칭 양의 정부호 행렬</td>
+<td>44</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-5-positive-definite-and-semidefinite-matrices/">5</a></td>
+</tr>
+<tr>
+<td>I.8</td>
+<td>SVD의 특잇값과 특이벡터</td>
+<td>56</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-6-singular-value-decomposition-svd/">6</a></td>
+</tr>
+<tr>
+<td>I.9</td>
+<td>주성분과 최적 저랭크 행렬</td>
+<td>71</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-7-eckart-young-the-closest-rank-k-matrix-to-a/">7</a></td>
+</tr>
+<tr>
+<td>I.10</td>
+<td>Rayleigh 몫과 일반화 고유값</td>
+<td>81</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-19-saddle-points-continued-maxmin-principle/">19</a></td>
+</tr>
+<tr>
+<td>I.11</td>
+<td>벡터·함수·행렬의 노름</td>
+<td>88</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-8-norms-of-vectors-and-matrices/">8</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-11-minimizing-2016x2016-subject-to-ax-b/">11</a></td>
+</tr>
+<tr>
+<td>I.12</td>
+<td>행렬·텐서 분해, 비음수성과 희소성</td>
+<td>97</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-2-multiplying-and-factoring-matrices/">2</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-6-singular-value-decomposition-svd/">6</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="part-ii-큰-행렬의-계산"><a class="markdownIt-Anchor" href="#part-ii-큰-행렬의-계산"></a> Part II — 큰 행렬의 계산</h3>
+<p>교재의 Part 제목은 <em>Computations with Large Matrices</em>입니다. 도입 pp. 113–114는 <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-10-survey-of-difficulties-with-ax-b/">Lecture 10</a>에 연결됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>절</th>
+<th>내용</th>
+<th>시작 쪽수</th>
+<th>연결 강의·글</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>II.1</td>
+<td>수치 선형대수</td>
+<td>115</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-12-computing-eigenvalues-and-singular-values/">12</a></td>
+</tr>
+<tr>
+<td>II.2</td>
+<td>최소제곱 문제를 푸는 네 방법</td>
+<td>124</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-9-four-ways-to-solve-least-squares-problems/">9</a></td>
+</tr>
+<tr>
+<td>II.3</td>
+<td>열공간의 세 가지 기저</td>
+<td>138</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-3-orthonormal-columns-in-q-give-q2019q-i/">3</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-9-four-ways-to-solve-least-squares-problems/">9</a></td>
+</tr>
+<tr>
+<td>II.4</td>
+<td>무작위화 선형대수</td>
+<td>146</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-13-randomized-matrix-multiplication/">13</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="part-iii-저랭크와-압축-센싱"><a class="markdownIt-Anchor" href="#part-iii-저랭크와-압축-센싱"></a> Part III — 저랭크와 압축 센싱</h3>
+<p>교재의 Part 제목은 <em>Low Rank and Compressed Sensing</em>입니다. Part 도입은 p. 159입니다.</p>
+<table>
+<thead>
+<tr>
+<th>절</th>
+<th>내용</th>
+<th>시작 쪽수</th>
+<th>연결 강의·글</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>III.1</td>
+<td>행렬의 변화와 역행렬의 변화</td>
+<td>160</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-14-low-rank-changes-in-a-and-its-inverse/">14</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-15-matrices-a-t-depending-on-t-derivative-da-dt/">15</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-16-derivatives-of-inverse-and-singular-values/">16</a></td>
+</tr>
+<tr>
+<td>III.2</td>
+<td>고유값의 교차 성질과 저랭크 신호</td>
+<td>168</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-15-matrices-a-t-depending-on-t-derivative-da-dt/">15</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-16-derivatives-of-inverse-and-singular-values/">16</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-18-counting-parameters-in-svd-lu-qr-saddle-points/">18</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-19-saddle-points-continued-maxmin-principle/">19</a></td>
+</tr>
+<tr>
+<td>III.3</td>
+<td>빠르게 감소하는 특잇값</td>
+<td>178</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-17-rapidly-decreasing-singular-values/">17</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-36-third-project-alan-edelman-and-julia-language/">36</a></td>
+</tr>
+<tr>
+<td>III.4</td>
+<td>제곱 손실과 L1 항을 분리하는 알고리즘</td>
+<td>184</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-11-minimizing-2016x2016-subject-to-ax-b/">11</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-25-stochastic-gradient-descent/">25</a></td>
+</tr>
+<tr>
+<td>III.5</td>
+<td>압축 센싱과 행렬 완성</td>
+<td>195</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-11-minimizing-2016x2016-subject-to-ax-b/">11</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-30-completing-a-rank-one-matrix-circulants/">30</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="part-iv-특별한-구조의-행렬"><a class="markdownIt-Anchor" href="#part-iv-특별한-구조의-행렬"></a> Part IV — 특별한 구조의 행렬</h3>
+<p>교재의 Part 제목은 <em>Special Matrices</em>입니다. Part 도입은 p. 203입니다.</p>
+<table>
+<thead>
+<tr>
+<th>절</th>
+<th>내용</th>
+<th>시작 쪽수</th>
+<th>연결 강의·글</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IV.1</td>
+<td>이산·연속 푸리에 변환</td>
+<td>204</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-31-eigenvectors-of-circulant-matrices-fourier-matrix/">31</a></td>
+</tr>
+<tr>
+<td>IV.2</td>
+<td>이동행렬과 순환행렬</td>
+<td>213</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-30-completing-a-rank-one-matrix-circulants/">30</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-31-eigenvectors-of-circulant-matrices-fourier-matrix/">31</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-32-imagenet-is-a-cnn-the-convolution-rule/">32</a></td>
+</tr>
+<tr>
+<td>IV.3</td>
+<td>Kronecker 곱</td>
+<td>221</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-31-eigenvectors-of-circulant-matrices-fourier-matrix/">31</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-32-imagenet-is-a-cnn-the-convolution-rule/">32</a></td>
+</tr>
+<tr>
+<td>IV.4</td>
+<td>Kronecker 합과 사인·코사인 변환</td>
+<td>228</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-31-eigenvectors-of-circulant-matrices-fourier-matrix/">31</a></td>
+</tr>
+<tr>
+<td>IV.5</td>
+<td>Toeplitz 행렬과 이동 불변 필터</td>
+<td>232</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-32-imagenet-is-a-cnn-the-convolution-rule/">32</a></td>
+</tr>
+<tr>
+<td>IV.6</td>
+<td>그래프, Laplacian, Kirchhoff 법칙</td>
+<td>239</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-35-finding-clusters-in-graphs-second-project-handwriting/">35</a></td>
+</tr>
+<tr>
+<td>IV.7</td>
+<td>스펙트럴 군집화와 k-means</td>
+<td>245</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-35-finding-clusters-in-graphs-second-project-handwriting/">35</a></td>
+</tr>
+<tr>
+<td>IV.8</td>
+<td>랭크 1 행렬 완성</td>
+<td>255</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-30-completing-a-rank-one-matrix-circulants/">30</a></td>
+</tr>
+<tr>
+<td>IV.9</td>
+<td>직교 Procrustes 문제</td>
+<td>257</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-34-distance-matrices-procrustes-problem-first-project/">34</a></td>
+</tr>
+<tr>
+<td>IV.10</td>
+<td>거리행렬</td>
+<td>259</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-33-neural-nets-and-the-learning-function/">33</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-34-distance-matrices-procrustes-problem-first-project/">34</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="part-v-확률과-통계"><a class="markdownIt-Anchor" href="#part-v-확률과-통계"></a> Part V — 확률과 통계</h3>
+<p>교재의 Part 제목은 <em>Probability and Statistics</em>입니다. Part 도입은 p. 263입니다.</p>
+<table>
+<thead>
+<tr>
+<th>절</th>
+<th>내용</th>
+<th>시작 쪽수</th>
+<th>연결 강의·글</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V.1</td>
+<td>평균, 분산, 확률</td>
+<td>264</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-19-saddle-points-continued-maxmin-principle/">19</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-20-definitions-and-inequalities/">20</a></td>
+</tr>
+<tr>
+<td>V.2</td>
+<td>확률분포</td>
+<td>275</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-20-definitions-and-inequalities/">20</a></td>
+</tr>
+<tr>
+<td>V.3</td>
+<td>모멘트·누적량과 통계 부등식</td>
+<td>284</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-20-definitions-and-inequalities/">20</a></td>
+</tr>
+<tr>
+<td>V.4</td>
+<td>공분산행렬과 결합확률</td>
+<td>294</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-20-definitions-and-inequalities/">20</a></td>
+</tr>
+<tr>
+<td>V.5</td>
+<td>다변량 정규분포와 가중 최소제곱</td>
+<td>304</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-9-four-ways-to-solve-least-squares-problems/">9</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-20-definitions-and-inequalities/">20</a></td>
+</tr>
+<tr>
+<td>V.6</td>
+<td>Markov 연쇄</td>
+<td>311</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-20-definitions-and-inequalities/">20</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-35-finding-clusters-in-graphs-second-project-handwriting/">35</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="part-vi-최적화"><a class="markdownIt-Anchor" href="#part-vi-최적화"></a> Part VI — 최적화</h3>
+<p>교재의 Part 제목은 <em>Optimization</em>입니다. Part 도입은 pp. 321–323입니다.</p>
+<table>
+<thead>
+<tr>
+<th>절</th>
+<th>내용</th>
+<th>시작 쪽수</th>
+<th>연결 강의·글</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VI.1</td>
+<td>볼록성, 최소화, Newton 방법</td>
+<td>324</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-21-minimizing-a-function-step-by-step/">21</a></td>
+</tr>
+<tr>
+<td>VI.2</td>
+<td>Lagrange 승수와 비용의 변화율</td>
+<td>333</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-24-linear-programming-and-two-person-games/">24</a></td>
+</tr>
+<tr>
+<td>VI.3</td>
+<td>선형계획, 게임이론, 쌍대성</td>
+<td>338</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-24-linear-programming-and-two-person-games/">24</a></td>
+</tr>
+<tr>
+<td>VI.4</td>
+<td>경사하강법과 가속</td>
+<td>344</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-21-minimizing-a-function-step-by-step/">21</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-22-gradient-descent-downhill-to-a-minimum/">22</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-23-accelerating-gradient-descent-use-momentum/">23</a></td>
+</tr>
+<tr>
+<td>VI.5</td>
+<td>확률적 경사하강법과 ADAM</td>
+<td>359</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-25-stochastic-gradient-descent/">25</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="part-vii-데이터에서-학습하기"><a class="markdownIt-Anchor" href="#part-vii-데이터에서-학습하기"></a> Part VII — 데이터에서 학습하기</h3>
+<p>교재의 Part 제목은 <em>Learning from Data</em>입니다. Part 도입은 pp. 371–374입니다.</p>
+<table>
+<thead>
+<tr>
+<th>절</th>
+<th>내용</th>
+<th>시작 쪽수</th>
+<th>연결 강의·글</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VII.1</td>
+<td>심층 신경망의 구성</td>
+<td>375</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-26-structure-of-neural-nets-for-deep-learning/">26</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-33-neural-nets-and-the-learning-function/">33</a></td>
+</tr>
+<tr>
+<td>VII.2</td>
+<td>합성곱 신경망</td>
+<td>387</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/pages/calendar/">28·29 실습 일정</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-36-third-project-alan-edelman-and-julia-language/">36</a>; 보완 연결 <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-32-imagenet-is-a-cnn-the-convolution-rule/">32</a></td>
+</tr>
+<tr>
+<td>VII.3</td>
+<td>역전파와 연쇄법칙</td>
+<td>397</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-27-backpropagation-find-partial-derivatives/">27</a></td>
+</tr>
+<tr>
+<td>VII.4</td>
+<td>하이퍼파라미터 선택</td>
+<td>407</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-25-stochastic-gradient-descent/">25</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-26-structure-of-neural-nets-for-deep-learning/">26</a></td>
+</tr>
+<tr>
+<td>VII.5</td>
+<td>머신러닝의 여러 접근</td>
+<td>413</td>
+<td>보완편 · <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-33-neural-nets-and-the-learning-function/">33</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="서문과-본편-뒤의-자료"><a class="markdownIt-Anchor" href="#서문과-본편-뒤의-자료"></a> 서문과 본편 뒤의 자료</h3>
+<p>책의 도입과 참고 자료도 관련 글에 연결합니다. 아래 강의 연결은 학습을 위한 보완 경로입니다. 색인과 서지는 참고 자료로 사용합니다.</p>
+<table>
+<thead>
+<tr>
+<th>교재 위치</th>
+<th>내용</th>
+<th>연결 강의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pp. iii–v, vi–x</td>
+<td>딥러닝 소개와 서문</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-1-the-column-space-of-a-contains-all-vectors-ax/">1</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-26-structure-of-neural-nets-for-deep-learning/">26</a></td>
+</tr>
+<tr>
+<td>p. 416</td>
+<td>머신러닝 참고 도서</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-33-neural-nets-and-the-learning-function/">33</a></td>
+</tr>
+<tr>
+<td>p. 417</td>
+<td>랭크 1 행렬의 고유값·특잇값</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-4-eigenvalues-and-eigenvectors/">4</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-6-singular-value-decomposition-svd/">6</a></td>
+</tr>
+<tr>
+<td>p. 418</td>
+<td>수치 선형대수의 코드와 알고리즘</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-12-computing-eigenvalues-and-singular-values/">12</a></td>
+</tr>
+<tr>
+<td>p. 419</td>
+<td>기본 분해의 매개변수 수</td>
+<td><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-18-counting-parameters-in-svd-lu-qr-saddle-points/">18</a></td>
+</tr>
+<tr>
+<td>pp. 420 이후</td>
+<td>저자·주제·기호 색인</td>
+<td>필요한 개념을 찾을 때 활용</td>
+</tr>
+</tbody>
+</table>
+<h2 id="각-글의-구성"><a class="markdownIt-Anchor" href="#각-글의-구성"></a> 각 글의 구성</h2>
+<p>각 정리 글의 처음에는 <strong>책의 Part·절 번호·제목·인쇄쪽수와 개별 강의 링크</strong>를 표시합니다. 이어서 개념과 필요한 가정, 예제, 정리와 증명, 지정 연습문제, 계산 확인, 복습 질문을 배치합니다. 강의에 없는 보완 설명과 직접 만든 예제는 따로 표시합니다.</p>
+<p>교재와 강의의 내용은 서로 보완하지만 분량과 순서는 다릅니다. 강의별 글과 교재 보완편을 함께 작성해, 한쪽에서 생략된 내용을 다른 쪽의 설명으로 연결할 계획입니다.</p>
+<h2 id="참고-자료"><a class="markdownIt-Anchor" href="#참고-자료"></a> 참고 자료</h2>
+<ul>
+<li>Gilbert Strang, <em>Linear Algebra and Learning from Data</em>, 2019. <strong>Part I–VII</strong>와 목차 pp. xi–xiii. <a target="_blank" rel="noopener" href="https://math.mit.edu/~gs/learningfromdata/">저자 공식 페이지</a>, <a target="_blank" rel="noopener" href="https://math.mit.edu/~gs/learningfromdata/dsla_toc.pdf">공식 목차 PDF</a>.</li>
+<li>MIT OpenCourseWare, 18.065, Spring 2018. <strong><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/video_galleries/video-lectures/">Lecture 1–36의 영상 목록</a></strong>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/pages/readings/">강의별 교재 읽기</a>, <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/pages/calendar/">수업 일정</a>.</li>
+<li>MIT OpenCourseWare, **<a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-20-definitions-and-inequalities/">Lecture 20</a>**의 교재 절 안내와 <a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/18065-all-problem-sets-in-one-file/">전체 문제집</a>.</li>
+</ul>
+<p><a href="/advanced-linear-algebra/lecture-01-column-space/">Lecture 1 읽기</a> · <a href="/categories/advanced-linear-algebra/">고급 선형 대수 글 목록</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linear-algebra/" rel="tag"># 선형대수</a>
+              <a href="/tags/gilbert-strang/" rel="tag"># Gilbert Strang</a>
+              <a href="/tags/mit-18-065/" rel="tag"># MIT 18.065</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/etc/cs-study-in-army/" rel="prev" title="컴공 학부생이 군대에서 공부하는 법">
+                  <i class="fa fa-chevron-left"></i> 컴공 학부생이 군대에서 공부하는 법
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/advanced-linear-algebra/lecture-01-column-space/" rel="next" title="고급 선형 대수 Lecture 1: 열공간과 랭크, A = CR 분해">
+                  고급 선형 대수 Lecture 1: 열공간과 랭크, A = CR 분해 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">이태화</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha256-94CNZ/bJtwrBYZrXhCOBvpB4rZUzBnvAsirFv31TMGo=" crossorigin="anonymous">
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"studyingeugene/studyingeugene.github.io","issue_term":"title","theme":"github-light"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

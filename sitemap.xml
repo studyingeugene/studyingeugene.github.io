@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://studyingeugene.github.io/advanced-linear-algebra/lecture-01-column-space/</loc>
+    
+    <lastmod>2026-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://studyingeugene.github.io/advanced-linear-algebra/series/</loc>
+    
+    <lastmod>2026-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://studyingeugene.github.io/about/index.html</loc>
     
     <lastmod>2023-10-26</lastmod>

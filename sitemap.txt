@@ -1,3 +1,5 @@
+https://studyingeugene.github.io/advanced-linear-algebra/lecture-01-column-space/
+https://studyingeugene.github.io/advanced-linear-algebra/series/
 https://studyingeugene.github.io/about/index.html
 https://studyingeugene.github.io/categories/index.html
 https://studyingeugene.github.io/etc/cs-study-in-army/
